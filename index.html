@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ProDentim | Cuide do seu sorriso</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7fbff;
+    color:#172033;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #e7edf5;
+}
+
+.nav{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    color:#087ee8;
+}
+
+.logo span{
+    color:#14b8a6;
+}
+
+.nav-btn{
+    background:#087ee8;
+    color:white;
+    padding:11px 20px;
+    border-radius:30px;
+    font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+    padding:85px 0 70px;
+    background:
+    radial-gradient(circle at 80% 20%,rgba(20,184,166,.15),transparent 30%),
+    radial-gradient(circle at 10% 20%,rgba(8,126,232,.14),transparent 35%),
+    #fff;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#e8f7ff;
+    color:#087ee8;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(42px,6vw,70px);
+    line-height:1.03;
+    letter-spacing:-2px;
+    margin-bottom:24px;
+}
+
+h1 span{
+    color:#087ee8;
+}
+
+.hero p{
+    font-size:19px;
+    color:#596579;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#087ee8,#06a6d8);
+    color:white;
+    padding:17px 30px;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:900;
+    box-shadow:0 15px 35px rgba(8,126,232,.25);
+    transition:.3s;
+}
+
+.cta:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(8,126,232,.35);
+}
+
+.hero-card{
+    background:white;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 25px 70px rgba(27,65,100,.13);
+    border:1px solid #e8f0f7;
+    text-align:center;
+    animation:float 4s ease-in-out infinite;
+}
+
+.hero-card .tooth{
+    font-size:100px;
+    margin-bottom:10px;
+}
+
+.hero-card h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.hero-card p{
+    font-size:15px;
+    margin:0 auto;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0)
+    }
+    50%{
+        transform:translateY(-10px)
+    }
+}
+
+/* SECTIONS */
+
+section{
+    padding:85px 0;
+}
+
+.section-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.section-title h2{
+    font-size:clamp(32px,5vw,48px);
+    line-height:1.1;
+    margin-bottom:14px;
+}
+
+.section-title p{
+    color:#687386;
+}
+
+/* BENEFITS */
+
+.benefits{
+    background:#fff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    padding:30px;
+    background:#f8fbfe;
+    border:1px solid #e7eef5;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+.icon{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:#e6f5ff;
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.card p{
+    color:#687386;
+}
+
+/* EXPLICAÇÃO */
+
+.explain{
+    background:#f1f8fc;
+}
+
+.explain-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.big-box{
+    min-height:360px;
+    border-radius:30px;
+    background:linear-gradient(145deg,#087ee8,#0ab6a4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:120px;
+    box-shadow:0 25px 60px rgba(8,126,232,.2);
+}
+
+.explain h2{
+    font-size:42px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.explain p{
+    color:#637084;
+    margin-bottom:20px;
+}
+
+.check{
+    display:flex;
+    gap:12px;
+    margin:14px 0;
+    font-weight:700;
+}
+
+/* CTA FINAL */
+
+.final-cta{
+    background:linear-gradient(135deg,#062b4d,#087ee8);
+    color:white;
+    text-align:center;
+}
+
+.final-cta h2{
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.final-cta p{
+    max-width:650px;
+    margin:0 auto 30px;
+    opacity:.9;
+}
+
+.final-cta .cta{
+    background:white;
+    color:#087ee8;
+}
+
+/* FAQ */
+
+.faq{
+    max-width:800px;
+    margin:auto;
+}
+
+details{
+    background:white;
+    margin-bottom:14px;
+    border:1px solid #e4ebf2;
+    border-radius:15px;
+    padding:20px;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:800;
+}
+
+details p{
+    color:#687386;
+    margin-top:14px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071827;
+    color:#aebccc;
+    text-align:center;
+    padding:35px 20px;
+    font-size:13px;
+}
+
+/* BOTÃO FLUTUANTE */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    z-index:2000;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .hero{
+        padding:60px 0;
+    }
+
+    .hero-grid,
+    .explain-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        order:-1;
+    }
+
+    .big-box{
+        min-height:260px;
+        font-size:90px;
+    }
+
+    h1{
+        letter-spacing:-1px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LINK DO CHECKOUT -->
+<!-- Todos os botões abaixo levam para o seu checkout -->
+
+<header>
+
+<div class="container nav">
+
+    <div class="logo">
+        Pro<span>Dentim</span>
+    </div>
+
+    <a
+    class="nav-btn"
+    href="https://www.checkout-ds24.com/redir/533733/lucaswander01/"
+    target="_blank"
+    rel="noopener">
+        Conhecer
+    </a>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+    <div class="badge">
+        🦷 Cuidado com o sorriso
+    </div>
+
+    <h1>
+        Uma nova forma de cuidar da
+        <span>saúde bucal.</span>
+    </h1>
+
+    <p>
+        Conheça o ProDentim, um suplemento
+        mastigável desenvolvido com probióticos
+        e nutrientes voltados para a saúde bucal.
+    </p>
+
+    <a
+    class="cta"
+    href="https://www.checkout-ds24.com/redir/533733/lucaswander01/"
+    target="_blank"
+    rel="noopener">
+        CONHECER O PRODENTIM →
+    </a>
+
+</div>
+
+
+<div class="hero-card">
+
+    <div class="tooth">
+        🦷
+    </div>
+
+    <h3>
+        ProDentim
+    </h3>
+
+    <p>
+        Probióticos e nutrientes em uma
+        fórmula mastigável.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BENEFÍCIOS -->
+
+<section class="benefits">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>
+        Por que conhecer o ProDentim?
+    </h2>
+
+    <p>
+        Conheça a proposta do produto e veja
+        as informações apresentadas pelo fabricante.
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+    <div class="icon">
+        🦠
+    </div>
+
+    <h3>
+        Probióticos
+    </h3>
+
+    <p>
+        A página apresenta uma combinação
+        de probióticos na fórmula.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">
+        😁
+    </div>
+
+    <h3>
+        Saúde bucal
+    </h3>
+
+    <p>
+        O produto é apresentado com foco
+        no cuidado da saúde bucal.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">
+        🌿
+    </div>
+
+    <h3>
+        Fácil de consumir
+    </h3>
+
+    <p>
+        A proposta apresentada é de um
+        suplemento em formato mastigável.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPLICAÇÃO -->
+
+<section class="explain">
+
+<div class="container explain-grid">
+
+
+<div class="big-box">
+    🦷
+</div>
+
+
+<div>
+
+    <h2>
+        Cuidado começa com informação.
+    </h2>
+
+    <p>
+        Antes de comprar, conheça a proposta,
+        composição, modo de uso e condições
+        apresentadas pelo fabricante.
+    </p>
+
+
+    <div class="check">
+        ✓ Informações sobre a fórmula
+    </div>
+
+    <div class="check">
+        ✓ Perguntas frequentes
+    </div>
+
+    <div class="check">
+        ✓ Informações sobre compra
+    </div>
+
+
+    <a
+    class="cta"
+    href="https://www.checkout-ds24.com/redir/533733/lucaswander01/"
+    target="_blank"
+    rel="noopener">
+        VER OFERTA →
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA FINAL -->
+
+<section class="final-cta">
+
+<div class="container">
+
+    <h2>
+        Quer conhecer o ProDentim?
+    </h2>
+
+    <p>
+        Acesse a página de compra para consultar
+        as condições e informações disponíveis.
+    </p>
+
+    <a
+    class="cta"
+    href="https://www.checkout-ds24.com/redir/533733/lucaswander01/"
+    target="_blank"
+    rel="noopener">
+        ACESSAR AGORA →
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>
+        Perguntas frequentes
+    </h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+    <summary>
+        O que é o ProDentim?
+    </summary>
+
+    <p>
+        É apresentado como um suplemento
+        mastigável com probióticos e nutrientes
+        voltado para a saúde bucal.
+    </p>
+
+</details>
+
+
+<details>
+
+    <summary>
+        Como o produto é consumido?
+    </summary>
+
+    <p>
+        Consulte as instruções de uso apresentadas
+        pelo fabricante na página de compra.
+    </p>
+
+</details>
+
+
+<details>
+
+    <summary>
+        Onde posso consultar o preço?
+    </summary>
+
+    <p>
+        Clique em qualquer botão desta página
+        para acessar o checkout.
+    </p>
+
+</details>
+
+
+<details>
+
+    <summary>
+        Onde faço a compra?
+    </summary>
+
+    <p>
+        A compra pode ser realizada através
+        do checkout oficial acessado pelos botões
+        desta página.
+    </p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 ProDentim — Página informativa.
+    </p>
+
+    <p style="margin-top:10px;">
+        Suplementos não substituem alimentação equilibrada
+        nem avaliação de profissionais de saúde.
+    </p>
+
+</footer>
+
+
+<!-- BOTÃO FLUTUANTE -->
+
+<a
+class="whatsapp"
+href="https://www.checkout-ds24.com/redir/533733/lucaswander01/"
+target="_blank"
+rel="noopener"
+aria-label="Acessar oferta">
+
+    ↗
+
+</a>
+
+
+<script>
+
+/* ANIMAÇÕES */
+
+const elementos = document.querySelectorAll(
+    '.card, .hero-card, .section-title, .explain-grid'
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity = '1';
+
+                entry.target.style.transform =
+                    'translateY(0)';
+
+            }
+
+        });
+
+    },
+    {
+        threshold:0.12
+    }
+);
+
+
+elementos.forEach(el => {
+
+    el.style.opacity = '0';
+
+    el.style.transform =
+        'translateY(25px)';
+
+    el.style.transition =
+        'opacity .7s ease, transform .7s ease';
+
+    observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
